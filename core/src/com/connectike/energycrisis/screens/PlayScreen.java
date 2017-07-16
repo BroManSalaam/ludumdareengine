@@ -96,6 +96,9 @@ public class PlayScreen implements Screen {
 			p.currentState = Player.State.RIGHT;
 			cam.translate(5, 0);
 		}
+		if((!inputHandler.isW) && (!inputHandler.isA) && (!inputHandler.isS) && (!inputHandler.isD)) {
+			p.currentState = Player.State.IDLE;
+		}
 		
 		if(inputHandler.scrollUp) {
 			cam.zoom += .05;
