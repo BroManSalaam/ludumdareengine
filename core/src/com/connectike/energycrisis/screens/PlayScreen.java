@@ -121,10 +121,10 @@ public class PlayScreen implements Screen {
 		renderer.render();
 
 		game.batch.begin();
-
-		//
+				
+		// Draw the player's current animation
 		game.batch.draw(p.getCurrentAnimation().getKeyFrame(elapsedTime, p.isAnimationLooping), cam.viewportWidth / 2,
-				cam.viewportHeight / 2);
+				cam.viewportHeight / 2, 32 / cam.zoom, 32 / cam.zoom);
 
 		game.batch.end();
 	}
