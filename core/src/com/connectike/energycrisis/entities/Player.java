@@ -93,7 +93,8 @@ public class Player implements Entity {
 		downAnimation = new Animation<TextureRegion>(0.33f, downFrames);
 		leftAnimation = new Animation<TextureRegion>(0.33f, leftFrames);
 		rightAnimation = new Animation<TextureRegion>(0.33f, rightFrames);
-
+		idleAnimation = new Animation<TextureRegion>(0.33f, downFrames[1]);
+		
 	}
 
 	/**
