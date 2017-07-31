@@ -2,15 +2,17 @@ package com.connectike.energycrisis;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.connectike.energycrisis.entities.Player;
+import com.connectike.energycrisis.creatures.Player;
+import com.connectike.energycrisis.creatures.Spawner;
 
 public class PlayScreenInputHandler implements InputProcessor {
-
+	
 	public boolean isW;
 	public boolean isA;
 	public boolean isS;
 	public boolean isD;
-
+	public boolean isSpace;
+	
 	public boolean scrollUp;
 	public boolean scrollDown;
 
@@ -39,6 +41,10 @@ public class PlayScreenInputHandler implements InputProcessor {
 			isD = true;
 			p.isAnimationLooping = true;
 		}
+		// atk buffering means you cant attack
+		if(keycode == Input.Keys.SPACE) {
+			isSpace = true;
+		}
 
 		return false;
 	}
@@ -61,6 +67,9 @@ public class PlayScreenInputHandler implements InputProcessor {
 		if (keycode == Input.Keys.D) {
 			isD = false;
 			p.isAnimationLooping = false;
+		}
+		if(keycode == Input.Keys.SPACE) {
+			isSpace = false;
 		}
 
 		return false;
